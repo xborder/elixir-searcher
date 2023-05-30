@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "elixir-searcher": {
+      "commandName": "Project",
+      "commandLineArgs": "--ingredients Neem oil, jewelweed"
+    }
+  }
+}
