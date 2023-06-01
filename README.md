@@ -56,3 +56,4 @@ loaded from disk instead of the API
 * Elixirs [API](https://wizard-world-api.herokuapp.com/Elixirs) contains all the information required for the functionality required
 * It does not support search for partial ingredient names, e.g searching for `Moth` instead of `Flitterby Moth` <!-- case in point Stewed Mandrake is not the same as Mandrake Root -->
 * Not needed to use service container
+* Tests are not exhaustive, its just to test the main functionality
