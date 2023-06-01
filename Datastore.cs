@@ -18,6 +18,8 @@ namespace elixir_searcher {
             _ingredientsList = new Dictionary<string, HashSet<ElixirDto>>();
         }
 
+        // Initializes datastore fetching all elixirs from the API and storing them in memory.
+        // Elixirs are referenced by their ingredients.
         public async Task Initialize() {
             _ingredientsList.Add(NO_INGREDIENTS, new());
 
@@ -44,6 +46,8 @@ namespace elixir_searcher {
             _initialized = true;
         }
 
+        // Searchs elixirs using a list of ingredients. Optionally, the final results can
+        // include elixirs that don't require ingredients.
         public async Task<IEnumerable<ElixirDto>> SearchElixirs(IEnumerable<string> ingredientsToSearch, bool includeNoIngredients = false) {
             if (!_initialized) {
                 await Initialize();
@@ -64,7 +68,7 @@ namespace elixir_searcher {
 
             foreach (var elixir in possibleElixirs) {
                 var intersection = elixir.Ingredients
-                                    .Select(i => i.Name)
+                                    .Select(i => i.Name.ToLower())
                                     .Intersect(ingredientsToSearch);
 
                 if (intersection.Count() == elixir.Ingredients.Count()

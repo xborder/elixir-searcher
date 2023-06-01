@@ -2,7 +2,7 @@
   "profiles": {
     "elixir-searcher": {
       "commandName": "Project",
-      "commandLineArgs": "--search"
+      "commandLineArgs": "--search Jewelweed, Bicorn horn, Mandrake root"
     }
   }
 }

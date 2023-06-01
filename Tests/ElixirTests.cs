@@ -71,7 +71,6 @@ namespace elixir_searcher.Tests {
 
             res = ds.SearchElixirs(new List<string>() { "ingredient 7"}).Result;
             Assert.IsEmpty(res.ToList());
-            Assert.AreEqual(0, res.Count());
         }
     }
 }

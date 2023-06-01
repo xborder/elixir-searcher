@@ -14,13 +14,13 @@ namespace elixir_searcher {
 
             var searchOption = new Option<IEnumerable<string>>(
                 name: "--search",
-                description: ""
+                description: "list of ingredients to search separated by ,"
             ) {
                 AllowMultipleArgumentsPerToken = true
             };
             var noIngredientsOption = new Option<bool>(
                 name: "--include-no-ingredients",
-                description: "",
+                description: "include elixirs that don't require ingredients",
                 getDefaultValue: () => false);
 
             _datastore = datastore;
@@ -29,7 +29,7 @@ namespace elixir_searcher {
             _rootCommand.AddOption(noIngredientsOption);
 
             _rootCommand.SetHandler(
-                (ingredientList, includeNoIngredients) => SearchElixirs(ParseIngredients(ingredientList), includeNoIngredients)
+                (ingredientList, includeNoIngredients) => SearchElixirs(ingredientList, includeNoIngredients)
                 ,searchOption, noIngredientsOption);
         }
 
