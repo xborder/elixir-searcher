@@ -1,6 +1,6 @@
 # elixir-searcher
 
-CLI Tool that uses The Wizard World (API)[https://wizard-world-api.herokuapp.com/swagger/index.html] to fetch all elixirs and search which elixirs can be conjured by providing a list of ingredients.
+CLI Tool that uses The Wizard World [API](https://wizard-world-api.herokuapp.com/swagger/index.html) to fetch all elixirs and search which elixirs can be conjured by providing a list of ingredients.
 
 To build:
 ```
